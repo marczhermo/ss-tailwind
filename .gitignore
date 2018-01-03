@@ -1,0 +1,4 @@
+/silverstripe-cache/
+/.env
+/vendor/
+/node_modules/

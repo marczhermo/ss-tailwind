@@ -1,0 +1,26 @@
+#off_canvas {
+  display: flex;
+  width: 100%;
+}
+
+#off_nav {
+  width: 0;
+  overflow: hidden;
+  background: rgb(221, 221, 221);
+  -webkit-transition:width 200ms ease-out;
+  -moz-transition:width 200ms ease-out;
+  -o-transition:width 200ms ease-out;
+  transition:width 200ms ease-out;
+  &.open{
+    width: 300px;
+    -webkit-transition:width 400ms ease-in;
+    -moz-transition:width 400ms ease-in;
+    -o-transition:width 400ms ease-in;
+    transition:width 400ms ease-in;
+  }
+}
+
+#main_container {
+  flex: 1;
+  order: 2;
+}
