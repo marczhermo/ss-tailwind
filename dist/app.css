@@ -517,14 +517,17 @@ body {
 }
 
 #off_nav {
-  width: 0;
+  background-color: #dae1e7;
   overflow: hidden;
-  background: #dddddd;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 0;
   -webkit-transition: width 200ms ease-out;
   transition: width 200ms ease-out;
 }
 
-#off_nav.open {
+#off_canvas.open #off_nav {
   width: 300px;
   -webkit-transition: width 400ms ease-in;
   transition: width 400ms ease-in;
@@ -537,6 +540,10 @@ body {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+}
+
+#off_canvas.open #main_container {
+  margin-right: -300px;
 }
 
 .container {
