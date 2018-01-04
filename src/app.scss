@@ -16,5 +16,9 @@ body {
 }
 
 @import "components/structure";
+@import "components/header";
+@import "components/menu";
+@import "components/body";
+@import "components/footer";
 
 @tailwind utilities;
