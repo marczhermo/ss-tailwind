@@ -1,5 +1,17 @@
 let mix = require('laravel-mix');
 let tailwindcss = require('tailwindcss');
+let glob = require("glob-all");
+let PurgecssPlugin = require("purgecss-webpack-plugin");
+
+// Custom PurgeCSS extractor for Tailwind that allows special characters in
+// class names.
+//
+// https://github.com/FullHuman/purgecss#extractor
+class TailwindExtractor {
+  static extract(content) {
+    return content.match(/[A-z0-9-:\/]+/g) || [];
+  }
+}
 
 /*
  |--------------------------------------------------------------------------
@@ -12,13 +24,42 @@ let tailwindcss = require('tailwindcss');
  |
  */
 mix.setPublicPath("./");
-mix.js('src/app.js', 'dist/')
-    .sass('src/app.scss', 'dist/')
-    .options({
-        processCssUrls: false,
-        postCss: [tailwindcss('./tailwind.js')],
-    });
 
+mix.js('src/app.js', 'dist/')
+  .sass('src/app.scss', 'dist/')
+  .options({
+    processCssUrls: false,
+    postCss: [tailwindcss('./tailwind.js')],
+  });
+
+// Only run PurgeCSS during production builds for faster development builds
+// and so you still have the full set of utilities available during
+// development.
+if (mix.inProduction()) {
+  mix.webpackConfig({
+    plugins: [
+      new PurgecssPlugin({
+
+        // Specify the locations of any files you want to scan for class names.
+        paths: glob.sync([
+          path.join(__dirname, "*.html"),
+          path.join(__dirname, "src/**/*.scss"),
+          path.join(__dirname, "src/**/*.js"),
+          path.join(__dirname, "templates/**/*.ss")
+        ]),
+        extractors: [
+          {
+            extractor: TailwindExtractor,
+
+            // Specify the file extensions to include when scanning for
+            // class names.
+            extensions: ["html", "js", "php", "vue", "ss"]
+          }
+        ]
+      })
+    ]
+  });
+}
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.
