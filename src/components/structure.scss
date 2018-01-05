@@ -1,12 +1,23 @@
 #off_canvas {
   @apply .flex;
   @apply .w-full;
+  &.open {
+    #off_nav {
+      .container {
+        left: 0;
+        -webkit-transition: left 400ms ease-in;
+        -moz-transition: left 400ms ease-in;
+        -o-transition: left 400ms ease-in;
+        transition: left 400ms ease-in;
+      }
+    }
+  }
 }
 
 #off_nav {
   @apply .bg-blue-darker;
   @apply .relative;
-  z-index: 100;
+  @apply .z-50;
   order: 1;
   width: 0;
   .container {
@@ -23,15 +34,15 @@
     -o-transition: left 200ms ease-out;
     transition: left 200ms ease-out;
   }
-  #off_canvas.open & {
-    .container {
-      left: 0;
-      -webkit-transition: left 400ms ease-in;
-      -moz-transition: left 400ms ease-in;
-      -o-transition: left 400ms ease-in;
-      transition: left 400ms ease-in;
-    }
-  }
+}
+
+#off_canvas.open #off_nav:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(#000000, .50);
 }
 
 #main_container {

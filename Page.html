@@ -15,7 +15,7 @@
 </head>
 
 <body class="font-sans">
-    <div id="off_canvas" class="close">
+    <div id="off_canvas" class="">
         <div id="main_container">
             <header>
                 <h1>
@@ -32,7 +32,7 @@
                     </h3>
                     <nav id="top_nav" class="">
                         <div class="p-4 block sm:hidden">
-                            <button class="px-3 py-2 border rounded text-yellow border-yellow hover:text-white hover:border-white">
+                            <button id="menu_open" class="px-3 py-2 border rounded text-yellow border-yellow hover:text-white hover:border-white">
                                 <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <title>Menu</title>
                                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -139,11 +139,11 @@
                 footer
             </footer>
         </div>
-        <nav id="off_nav" class="shadow-inner">
-            <div class="container">
+        <nav id="off_nav">
+            <div class="container shadow-lg">
                 <div class="flex justify-between items-center border-b border-blue-darkest px-8 py-6">
                     <h3 class="text-white">Menu</h3>
-                    <button class="px-2 py-1 border rounded text-white border-white hover:text-blue hover:border-blue">
+                    <button id="menu_close" class="px-2 py-1 border rounded text-white border-white hover:text-blue hover:border-blue">
                         <svg class="fill-current h-3 w-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20"
                             xml:space="preserve">
