@@ -7,29 +7,25 @@
   @apply .bg-grey-light;
   @apply .overflow-hidden;
   order: 1;
-
   width: 0;
-  -webkit-transition:width 200ms ease-out;
-  -moz-transition:width 200ms ease-out;
-  -o-transition:width 200ms ease-out;
-  transition:width 200ms ease-out;
-
+  -webkit-transition: width 200ms ease-out;
+  -moz-transition: width 200ms ease-out;
+  -o-transition: width 200ms ease-out;
+  transition: width 200ms ease-out;
   // overflow-y:scroll;
   // -webkit-overflow-scrolling:touch;
-
   #off_canvas.open & {
     width: 300px;
-    -webkit-transition:width 400ms ease-in;
-    -moz-transition:width 400ms ease-in;
-    -o-transition:width 400ms ease-in;
-    transition:width 400ms ease-in;
+    -webkit-transition: width 400ms ease-in;
+    -moz-transition: width 400ms ease-in;
+    -o-transition: width 400ms ease-in;
+    transition: width 400ms ease-in;
   }
 }
 
 #main_container {
   @apply .flex-1;
   order: 2;
-
   #off_canvas.open & {
     margin-right: -300px;
   }
