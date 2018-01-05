@@ -1,5 +1,7 @@
 header {
   @apply .bg-black;
+  @apply .relative;
+  @apply .z-50;
   min-height: 100px;
   border-bottom: 5px solid #fed700;
   h1 {
@@ -13,40 +15,5 @@ header {
     @apply .text-white;
     @apply .font-medium;
     @apply .text-base;
-  }
-}
-
-.links {
-  ul {
-    @apply .list-reset; // @apply .flex;
-    @apply .justify-center;
-  }
-  a {
-    @apply .tracking-wide;
-    @apply .no-underline;
-    @apply .text-center;
-    @apply .inline-block;
-    @apply .w-full;
-    @apply .text-yellow-dark;
-    @apply .bg-black;
-    @apply .inline-block;
-    padding: 20px 10px;
-    transition: all 0.25s;
-    &:hover {
-      @apply .bg-yellow-dark;
-      @apply .text-black;
-    }
-    &.active {
-      @apply .bg-yellow-dark;
-      @apply .text-black;
-    }
-  }
-}
-
-@screen sm {
-  .links {
-    ul {
-      @apply .flex;
-    }
   }
 }

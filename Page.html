@@ -15,7 +15,7 @@
 </head>
 
 <body class="font-sans">
-    <div id="off_canvas" class="close">
+    <div id="off_canvas" class="open">
         <div id="main_container">
             <header>
                 <h1>
@@ -31,7 +31,7 @@
                         </a>
                     </h3>
                     <nav id="top_nav" class="">
-                        <div class="block lg">
+                        <div class="p-4 block sm:hidden">
                             <button class="px-3 py-2 border rounded text-yellow border-yellow hover:text-white hover:border-white">
                                 <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <title>Menu</title>
@@ -42,27 +42,40 @@
                         <div class="links">
                             <ul>
                                 <li>
-                                    <a href="#responsive-header" class="active">
+                                    <a href="#home" class="active">
                                         Home
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#responsive-header" class="">
+                                    <a href="#about" class="">
                                         About
                                     </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#sub-menu-1" class="">
+                                                About link 1
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#sub-menu-2" class="">
+                                                About long link 2
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="#responsive-header" class="">
+                                    <a href="#blogs" class="">
                                         Blogs
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#responsive-header" class="">
+                                    <a href="#portfolio" class="">
                                         Portfolio
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#responsive-header" class="">
+                                <li class="active">
+                                    <a href="#contact" class="">
                                         Contact
                                     </a>
                                 </li>
@@ -126,8 +139,60 @@
                 footer
             </footer>
         </div>
-        <nav id="off_nav" class="shadow-inner">
-            off_nav
+        <nav id="off_nav" class="shadow-inner overflow-y-scroll">
+            <div class="container">
+                <div class="flex justify-between items-center border-b border-blue-darkest px-8 py-6">
+                    <h3 class="text-white">Menu</h3>
+                    <button class="px-2 py-1 border rounded text-white border-white hover:text-blue hover:border-blue">
+                        <svg class="fill-current h-3 w-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20"
+                            xml:space="preserve">
+                            <polygon points="17.778,3.636 16.364,2.222 10,8.586 3.636,2.222 2.222,3.636 8.586,10 2.222,16.364 3.636,17.778 10,11.414
+                    	16.364,17.778 17.778,16.364 11.414,10 " />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="flex flex-col list-reset block">
+                    <li class="block">
+                        <a href="#home" class="active no-underline text-white block w-full border-b border-blue-darkest px-8 py-4 hover:text-blue">
+                            Home
+                        </a>
+                    </li>
+                    <li class="block">
+                        <a href="#about" class="no-underline text-white block w-full border-b border-blue-darkest px-8 py-4 hover:text-blue">
+                            About
+                        </a>
+                        <ul class="flex flex-col list-reset bg-blue-darkest block">
+                            <li class="flex block border-b border-blue-darker">
+                                <a href="#sub-menu-1" class="no-underline text-white block w-full ml-4 hover:text-blue px-8 py-4">
+                                    About link 1
+                                </a>
+                            </li>
+                            <li class="flex block border-b border-blue-darker">
+                                <a href="#sub-menu-2" class="no-underline text-white block w-full ml-4 hover:text-blue px-8 py-4">
+                                    About long link 2
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="block">
+                        <a href="#blogs" class="no-underline text-white block w-full border-b border-blue-darkest px-8 py-4 hover:text-blue">
+                            Blogs
+                        </a>
+                    </li>
+                    <li class="block">
+                        <a href="#portfolio" class="no-underline text-white block w-full border-b border-blue-darkest px-8 py-4 hover:text-blue">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li class="block active">
+                        <a href="#contact" class="no-underline text-white block w-full border-b border-blue-darkest px-8 py-4 hover:text-blue">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </div>
 
