@@ -5,19 +5,32 @@
 
 #off_nav {
   @apply .bg-blue-darker;
-  @apply .overflow-hidden;
+  @apply .relative;
+  @apply .z-50;
   order: 1;
   width: 0;
-  -webkit-transition: width 200ms ease-out;
-  -moz-transition: width 200ms ease-out;
-  -o-transition: width 200ms ease-out;
-  transition: width 200ms ease-out;
-  #off_canvas.open & {
+  .container {
+    @apply .bg-blue-darker;
+    @apply .absolute;
+    @apply .z-50;
+    @apply .h-screen;
+    @apply .overflow-y-scroll;
+    @apply .scrolling-touch;
     width: 300px;
-    -webkit-transition: width 400ms ease-in;
-    -moz-transition: width 400ms ease-in;
-    -o-transition: width 400ms ease-in;
-    transition: width 400ms ease-in;
+    left: -310px;
+    -webkit-transition: left 200ms ease-out;
+    -moz-transition: left 200ms ease-out;
+    -o-transition: left 200ms ease-out;
+    transition: left 200ms ease-out;
+  }
+  #off_canvas.open & {
+    .container {
+      left: 0;
+      -webkit-transition: left 400ms ease-in;
+      -moz-transition: left 400ms ease-in;
+      -o-transition: left 400ms ease-in;
+      transition: left 400ms ease-in;
+    }
   }
 }
 
@@ -25,6 +38,7 @@
   @apply .flex-1;
   order: 2;
   #off_canvas.open & {
-    margin-right: -300px;
+    @apply .h-screen;
+    @apply .overflow-hidden;
   }
 }

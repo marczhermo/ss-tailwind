@@ -518,19 +518,32 @@ body {
 
 #off_nav {
   background-color: #1c3d5a;
-  overflow: hidden;
+  position: relative;
+  z-index: 50;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   width: 0;
-  -webkit-transition: width 200ms ease-out;
-  transition: width 200ms ease-out;
 }
 
-#off_canvas.open #off_nav {
+#off_nav .container {
+  background-color: #1c3d5a;
+  position: absolute;
+  z-index: 50;
+  height: 100vh;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
   width: 300px;
-  -webkit-transition: width 400ms ease-in;
-  transition: width 400ms ease-in;
+  left: -310px;
+  -webkit-transition: left 200ms ease-out;
+  transition: left 200ms ease-out;
+}
+
+#off_canvas.open #off_nav .container {
+  left: 0;
+  -webkit-transition: left 400ms ease-in;
+  transition: left 400ms ease-in;
 }
 
 #main_container {
@@ -543,7 +556,8 @@ body {
 }
 
 #off_canvas.open #main_container {
-  margin-right: -300px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 header {
